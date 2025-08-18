@@ -261,6 +261,21 @@
             inset: 0;
             z-index: -2
         }
+/* Responsive typography */
+h2 { font-size: clamp(1.5rem, 2.6vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.1vw, 2rem); }
+
+@media (max-width: 1366px) {
+  section.text-center { margin-bottom: 2rem; }
+  .social-chip { padding: 10px 14px; }
+}
+
+#particleCanvas { pointer-events: none; }
+
+@media (max-width: 1366px) {
+  .draggable { bottom: 12px; right: 12px; }
+}
+
     </style>
 </head>
 
@@ -310,7 +325,7 @@
 
     <!-- Header -->
     <header class="shadow-lg rounded-b-xl mb-8">
-        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+        <nav class="container mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-3 mb-4 md:mb-0">
                 <img src="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" alt="BigJuanWins Logo" class="w-16 h-16 rounded-full ring-2 ring-white/70" />
                 <h1 class="brand-title text-white text-4xl">BigJuanWins</h1>
@@ -326,7 +341,7 @@
     </header>
 
     <!-- Main -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto max-w-6xl px-4 py-8">
         <!-- Hero / Leaderboard -->
         <section class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-[#CE1126] tracking-wide uppercase">
@@ -428,7 +443,7 @@
 
     <!-- Footer -->
     <footer class="rounded-t-xl py-10 px-4 text-white shadow-inner" style="background:linear-gradient(160deg,#0d8a5e,var(--mx-green))">
-        <div class="container mx-auto grid md:grid-cols-3 gap-8 items-start">
+         <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8 items-start">
             <div>
                 <p class="text-2xl font-extrabold mb-2">BigJuanWins</p>
                 <p class="text-sm opacity-90">All Rights Reserved 2025.</p>
