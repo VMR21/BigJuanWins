@@ -327,7 +327,7 @@
 
 
         #countdown {
-            font-size: 3rem;
+             font-size: clamp(1.6rem, 3vw, 3rem);
             font-weight: 800;
             color: var(--mx-white);
             text-shadow: 0 0 10px var(--mx-gold), 0 0 20px var(--mx-gold);
@@ -352,17 +352,16 @@
             /* Added padding to the container */
         }
 
-        .top3-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            justify-items: center;
-            align-items: center;
-            /* Changed to center for better fit */
-            position: relative;
-        }
+.top3-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  justify-items: center;
+  align-items: start;
+}
+
 
 
         @media (max-width: 768px) {
@@ -443,7 +442,7 @@
         }
 
         .top3-username {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
             font-weight: 700;
             color: var(--mx-green);
             margin-bottom: 5px;
@@ -464,7 +463,7 @@
         }
 
         .top3-reward {
-            font-size: 1.8rem;
+            font-size: clamp(1.25rem, 2.2vw, 1.8rem);
             font-weight: 800;
             color: var(--mx-red);
             text-shadow: 0 0 5px rgba(206, 17, 38, 0.5);
@@ -558,6 +557,10 @@
                 justify-content: center;
             }
         }
+@media (max-width: 1366px) {
+  .leaderboard-container { padding: 12px; }
+  .top3-grid { gap: 14px; }
+}
     </style>
 </head>
 
@@ -594,12 +597,12 @@
     </header>
 
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto max-w-6xl px-4 py-8">
 <div class="flex justify-center mb-8">
-  <div 
-    class="w-96 h-52 flex items-center justify-center rounded-lg shadow-xl border-4 border-white cursor-pointer transition-transform duration-300 hover:scale-105" 
-    style="background-color:#006847;" 
-    onclick="window.location.href='/leaderboard/rainbet'">
+<div 
+  class="w-full max-w-sm aspect-[16/9] flex items-center justify-center rounded-lg shadow-xl border-4 border-white cursor-pointer transition-transform duration-300 hover:scale-105" 
+  style="background-color:#006847;" 
+  onclick="window.location.href='/leaderboard/rainbet'">
     <img src="https://i.postimg.cc/15jtLV6z/rainbet1.png" 
          alt="Rainbet Logo" 
          class="h-[85%] w-auto">
