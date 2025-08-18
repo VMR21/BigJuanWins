@@ -347,7 +347,8 @@
 
 <!-- CTA -->
 <section class="flex justify-center mb-14">
-  <a href="https://rainbet.com/?r=JUAN" class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white">
+  <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer"
+       onclick="window.location.href='https://rainbet.com/?r=JUAN'">
     <div class="flex flex-col items-center">
 
       <!-- Logo with red background box -->
@@ -375,12 +376,22 @@
       </ul>
 
       <div class="flex flex-wrap gap-4 justify-center">
-        <button class="btn-gold font-bold py-3 px-8 rounded-full shadow">Sign Up Now</button>
-        <button class="btn-green font-bold py-3 px-8 rounded-full shadow" onclick="window.location.href='/leaderboard/rainbet'">View Leaderboard</button>
+        <!-- Sign Up button goes directly to Rainbet -->
+        <a href="https://rainbet.com/?r=JUAN" 
+           class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
+          Sign Up Now
+        </a>
+
+        <!-- Leaderboard button goes to your leaderboard -->
+        <a href="/leaderboard/rainbet" 
+           class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
+          View Leaderboard
+        </a>
       </div>
     </div>
-  </a>
+  </div>
 </section>
+
 
 
         <!-- Socials (real brand favicons/icons) -->
