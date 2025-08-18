@@ -561,6 +561,21 @@
   .leaderboard-container { padding: 12px; }
   .top3-grid { gap: 14px; }
 }
+/* Responsive typography */
+h2 { font-size: clamp(1.5rem, 2.6vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.1vw, 2rem); }
+
+@media (max-width: 1366px) {
+  section.text-center { margin-bottom: 2rem; }
+  .social-chip { padding: 10px 14px; }
+}
+
+#particleCanvas { pointer-events: none; }
+
+@media (max-width: 1366px) {
+  .draggable { bottom: 12px; right: 12px; }
+}
+
     </style>
 </head>
 
