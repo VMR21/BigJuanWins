@@ -403,65 +403,91 @@
                 Join the Leaderboard
             </h2>
 
-<div class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
-  <img 
-    src="https://i.postimg.cc/15jtLV6z/rainbet1.png" 
-    alt="Rainbet Logo" 
-    onclick="window.location.href='/leaderboard/rainbet'" 
-    style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" 
-  />
-  <div class="lb-badge">$2,500</div>
-</div>
+<body class="antialiased">
+    <div class="papel-banner"></div>    <div class="serape"></div>
+    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-[var(--mx-red)] text-white px-6 py-3 rounded-xl shadow-lg z-50 transition-opacity duration-300 opacity-0 hidden">        <span id="message"></span>    </div>
+    <div id="draggable-player" class="draggable">        <div id="controls" class="controls">            <div id="drag-handle" class="text-xl font-extrabold">                <i class="fa-solid fa-grip-lines"></i>            </div>            <button id="close-btn" class="ml-auto text-2xl">                <i class="fa-solid fa-xmark"></i>            </button>        </div>        <div class="player-body">            <iframe src="https://player.kick.com/BigJuanWins" allow="autoplay; fullscreen" allowfullscreen title="BigJuanWins stream">            </iframe>        </div>    </div>    <button id="open-btn" class="hidden fixed bottom-4 right-4 w-14 h-14 rounded-full bg-[#7A4F2A] text-[#FFC107] text-3xl z-[1001] shadow-lg">        <i class="fa-solid fa-video"></i>    </button>
+    <canvas id="particleCanvas"></canvas>    <div class="glow-container">        <div class="left-glow"></div>        <div class="right-glow"></div>    </div>
+    <div class="relative h-0 z-[-1]">        <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Left" class="coin-left absolute top-[-60px] left-[15%] opacity-60 rounded-full">        <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Right" class="coin-right absolute top-[-60px] right-[15%] opacity-60 rounded-full">    </div>
+    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-1/4 left-[5%] rotate-12">    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla bottom-1/4 right-[8%] -rotate-6 animation-delay-2000">    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-[25%] right-[8%] rotate-8 animation-delay-3000">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] left-[25%] rotate-3">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata bottom-[25%] left-[5%] -rotate-1 animation-delay-1500">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] right-[25%] rotate-8 animation-delay-3000">
 
+    <header class="shadow-lg rounded-b-xl mb-8">        <nav class="container mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row justify-between items-center">            <div class="flex items-center gap-3 mb-4 md:mb-0">                <img src="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" alt="BigJuanWins Logo" class="w-16 h-16 rounded-full ring-2 ring-white/70" />                <h1 class="brand-title text-white text-4xl">BigJuanWins</h1>            </div>            <ul class="flex items-center gap-6">                <li>                    <a href="/leaderboard/rainbet" class="text-white font-semibold uppercase tracking-wide hover:text-[var(--mx-gold)]">                        Leaderboard                    </a>                </li>            </ul>        </nav>    </header>
+    <main class="container mx-auto max-w-6xl px-4 py-8">        <section class="text-center mb-12">            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-[#CE1126] tracking-wide uppercase">                Join the Leaderboard            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="/leaderboard/upgrader" class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
+                    <img src="https://i.postimg.cc/mD8T9n0v/upgrader-logo.png" alt="Upgrader Logo" style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" />
+                    <div class="lb-badge">$500</div>
+                </a>
+                
+                <a href="/leaderboard/rainbet" class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
+                    <img src="https://i.postimg.cc/15jtLV6z/rainbet1.png" alt="Rainbet Logo" style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" />
+                    <div class="lb-badge">$2,500</div>
+                </a>
+
+                <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer" onclick="window.location.href='https://upgrader.gg/?r=JUAN'">
+                    <div class="flex flex-col items-center">
+                        <div class="mb-5 bg-[#CE1126] p-4 rounded-xl shadow-lg">
+                            <img src="https://i.postimg.cc/mD8T9n0v/upgrader-logo.png" alt="Upgrader Icon" class="mx-auto max-h-20" />
+                        </div>
+                        <div class="flex items-center gap-3 mb-4 text-3xl font-extrabold">
+                            <i class="fa-solid fa-angles-left text-[var(--mx-green)]"></i>
+                            <span>Code</span>
+                            <span class="text-[var(--mx-red)] uppercase">JUAN</span>
+                            <i class="fa-solid fa-angles-right text-[var(--mx-green)]"></i>
+                        </div>
+                        <ul class="grid sm:grid-cols-2 gap-3 text-gray-800 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Unlock Exclusive Rewards
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Monthly Leaderboards
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <a href="https://upgrader.gg/?r=JUAN" class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
+                                Sign Up Now
+                            </a>
+                            <a href="/leaderboard/upgrader" class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
+                                View Leaderboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-<!-- CTA -->
-<section class="flex justify-center mb-14">
-  <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer"
-        onclick="window.location.href='https://rainbet.com/?r=JUAN'">
-    <div class="flex flex-col items-center">
-
-      <!-- Logo with red background box -->
-      <div class="mb-5 bg-[#CE1126] p-4 rounded-xl shadow-lg">
-        <img 
-          src="https://i.postimg.cc/15jtLV6z/rainbet1.png" 
-          alt="Rainbet Icon" 
-          class="mx-auto max-h-20" />
-      </div>
-
-      <div class="flex items-center gap-3 mb-4 text-3xl font-extrabold">
-        <i class="fa-solid fa-angles-left text-[var(--mx-green)]"></i>
-        <span>Code</span>
-        <span class="text-[var(--mx-red)] uppercase">JUAN</span>
-        <i class="fa-solid fa-angles-right text-[var(--mx-green)]"></i>
-      </div>
-
-      <ul class="grid sm:grid-cols-2 gap-3 text-gray-800 mb-6">
-        <li class="flex items-center gap-2">
-          <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Unlock Exclusive Rewards
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Monthly Leaderboards
-        </li>
-      </ul>
-
-      <div class="flex flex-wrap gap-4 justify-center">
-        <!-- Sign Up button goes directly to Rainbet -->
-        <a href="https://rainbet.com/?r=JUAN" 
-           class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
-          Sign Up Now
-        </a>
-
-        <!-- Leaderboard button goes to your leaderboard -->
-        <a href="/leaderboard/rainbet" 
-           class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
-          View Leaderboard
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
+        <section class="flex justify-center mb-14">
+            <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer" onclick="window.location.href='https://rainbet.com/?r=JUAN'">
+                <div class="flex flex-col items-center">
+                    <div class="mb-5 bg-[#CE1126] p-4 rounded-xl shadow-lg">
+                        <img src="https://i.postimg.cc/15jtLV6z/rainbet1.png" alt="Rainbet Icon" class="mx-auto max-h-20" />
+                    </div>
+                    <div class="flex items-center gap-3 mb-4 text-3xl font-extrabold">
+                        <i class="fa-solid fa-angles-left text-[var(--mx-green)]"></i>
+                        <span>Code</span>
+                        <span class="text-[var(--mx-red)] uppercase">JUAN</span>
+                        <i class="fa-solid fa-angles-right text-[var(--mx-green)]"></i>
+                    </div>
+                    <ul class="grid sm:grid-cols-2 gap-3 text-gray-800 mb-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Unlock Exclusive Rewards
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Monthly Leaderboards
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="https://rainbet.com/?r=JUAN" class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
+                            Sign Up Now
+                        </a>
+                        <a href="/leaderboard/rainbet" class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
+                            View Leaderboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <!-- Socials (real brand favicons/icons) -->
