@@ -840,21 +840,42 @@ h3 { font-size: clamp(1.25rem, 2.1vw, 2rem); }
             const rainbetLogoPlaceholder = 'https://i.ibb.co/BVHkvhJF/image.png';
             const rewards = [200, 150, 75 ,50, 50, 0]; // Rewards for 1st, 2nd, 3rd, 4th, 5th place respectively
 
-            function updateCountdown() {
-                const el = document.getElementById("countdown");
-                const now = new Date();
-                const nextMonth = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1, 0, 0, 0));
-                const target = new Date(nextMonth.getTime() - 60000); // End of current month UTC
-                const diff = target - now;
-                if (diff <= 0) return el.textContent = "Ended";
-                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const m = Math.floor((diff / (1000 * 60)) % 60);
-                const s = Math.floor((diff / 1000) % 60);
-                el.textContent = `${d}d ${h}h ${m}m ${s}s`;
-            }
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
+function updateCountdown() {
+  const el = document.getElementById("countdown");
+  const now = new Date();
+
+  // Anchor date 2025-09-17 00:00 UTC
+  const anchor = new Date(Date.UTC(2025, 8, 17, 0, 0, 0));
+  const msPerPeriod = 14 * 24 * 60 * 60 * 1000;
+
+  // Calculate how many full periods have elapsed since the anchor
+  let elapsedPeriods = Math.floor((now - anchor) / msPerPeriod);
+
+  // Determine current period start
+  let currentPeriodStart = new Date(anchor.getTime() + elapsedPeriods * msPerPeriod);
+  let target = new Date(currentPeriodStart.getTime() + msPerPeriod - 1);
+
+  // If the target has already passed (very rare due to math, but for safety), move forward to next period
+  if (now > target) {
+    elapsedPeriods += 1;
+    currentPeriodStart = new Date(anchor.getTime() + elapsedPeriods * msPerPeriod);
+    target = new Date(currentPeriodStart.getTime() + msPerPeriod - 1);
+  }
+
+  const diff = target - now;
+
+  // Calculate days, hours, minutes, seconds
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  el.textContent = `${d}d ${h}h ${m}m ${s}s`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
 
 
             // Function to load and render leaderboard data
