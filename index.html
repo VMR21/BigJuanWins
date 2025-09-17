@@ -8,21 +8,17 @@
     <meta name="description" content="Exclusive wager races on Rainbet for code JUAN!" />
     <meta name="theme-color" content="#006847" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="BigJuanWins — Exclusive Leaderboards" />
     <meta property="og:description" content="Join our Rainbet leaderboards. Use code: JUAN." />
     <meta property="og:image" content="https://placehold.co/1200x630/006847/ffffff?text=BigJuanWins" />
     <meta property="og:type" content="website" />
 
-    <!-- Favicon set -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" />
     <link rel="icon" type="image/png" sizes="16x16" href="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" />
     <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22BigJuanWins%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fplacehold.co%2F192x192%2FCE1126%2FFFFFF%3Ftext%3DR%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fplacehold.co%2F512x512%2F006847%2FFFFFF%3Ftext%3DR%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D" />
 
-    <!-- Tailwind / Fonts / Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Updated Google Fonts to include 'Luckiest Guy' for a more Mexican/festive feel -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Alfa+Slab+One&family=Luckiest+Guy&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
@@ -43,14 +39,14 @@
             background: var(--sand);
             color: #2b2b2b;
             overflow-x: hidden;
-            position: relative; /* Added for absolute positioning of new elements like tortillas and piñatas */
+            position: relative;
+            /* Added for absolute positioning of new elements like tortillas and piñatas */
         }
 
         /* Papel picado banner (SVG background) */
         .papel-banner {
             position: relative;
-            background:
-                radial-gradient(40px 10px at 8% 120%, var(--mx-green) 20%, transparent 21%) 0 0/120px 60px repeat-x,
+            background: radial-gradient(40px 10px at 8% 120%, var(--mx-green) 20%, transparent 21%) 0 0/120px 60px repeat-x,
                 radial-gradient(40px 10px at 58% 120%, var(--mx-red) 20%, transparent 21%) 60px 0/120px 60px repeat-x,
                 linear-gradient(90deg, var(--mx-green), var(--mx-white), var(--mx-red));
             height: 64px;
@@ -78,7 +74,8 @@
         }
 
         /* New font 'Luckiest Guy' for main headings for a festive Mexican feel */
-        h2, h3 {
+        h2,
+        h3 {
             font-family: 'Luckiest Guy', cursive;
             letter-spacing: 2px;
             text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
@@ -118,9 +115,11 @@
             0% {
                 transform: translateY(0) rotate(10deg)
             }
+
             50% {
                 transform: translateY(-12px) rotate(10deg)
             }
+
             100% {
                 transform: translateY(0) rotate(10deg)
             }
@@ -130,9 +129,11 @@
             0% {
                 transform: translateY(0) scaleX(-1) rotate(10deg)
             }
+
             50% {
                 transform: translateY(-12px) scaleX(-1) rotate(10deg)
             }
+
             100% {
                 transform: translateY(0) scaleX(-1) rotate(10deg)
             }
@@ -140,19 +141,42 @@
 
         /* Added spin animation for tortillas */
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Added bounce animation for piñatas */
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
         }
 
-        .coin-left { animation: floatL 4s ease-in-out infinite; }
-        .coin-right { animation: float 4s ease-in-out infinite; }
+        .coin-left {
+            animation: floatL 4s ease-in-out infinite;
+        }
+
+        .coin-right {
+            animation: float 4s ease-in-out infinite;
+        }
 
         /* Styles for floating tortillas */
         .tortilla {
@@ -168,13 +192,22 @@
             position: absolute;
             z-index: -1;
             opacity: 0.8;
-            animation: bounce 6s ease-in-out infinite; /* Piñatas will bounce gently */
+            animation: bounce 6s ease-in-out infinite;
+            /* Piñatas will bounce gently */
         }
 
         /* Used to delay animations for variety */
-        .animation-delay-1500 { animation-delay: 1.5s; }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-3000 { animation-delay: 3s; }
+        .animation-delay-1500 {
+            animation-delay: 1.5s;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-3000 {
+            animation-delay: 3s;
+        }
 
 
         /* --- FIX: Stream player sizing & responsiveness --- */
@@ -298,44 +331,58 @@
             inset: 0;
             z-index: -2
         }
+
         /* Responsive typography */
-        h2 { font-size: clamp(1.5rem, 2.6vw, 2.75rem); }
-        h3 { font-size: clamp(1.25rem, 2.1vw, 2rem); }
-
-        @media (max-width: 1366px) {
-            section.text-center { margin-bottom: 2rem; }
-            .social-chip { padding: 10px 14px; }
+        h2 {
+            font-size: clamp(1.5rem, 2.6vw, 2.75rem);
         }
 
-        #particleCanvas { pointer-events: none; }
+        h3 {
+            font-size: clamp(1.25rem, 2.1vw, 2rem);
+        }
 
         @media (max-width: 1366px) {
-            .draggable { bottom: 12px; right: 12px; }
-        }
-@media (max-width: 768px) {
-  .coin-left,
-  .coin-right,
-  .tortilla,
-  .pinata {
-    display: none !important;
-  }
-}
+            section.text-center {
+                margin-bottom: 2rem;
+            }
 
+            .social-chip {
+                padding: 10px 14px;
+            }
+        }
+
+        #particleCanvas {
+            pointer-events: none;
+        }
+
+        @media (max-width: 1366px) {
+            .draggable {
+                bottom: 12px;
+                right: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .coin-left,
+            .coin-right,
+            .tortilla,
+            .pinata {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
 <body class="antialiased">
 
-    <!-- Decorative banners -->
     <div class="papel-banner"></div>
     <div class="serape"></div>
 
-    <!-- Toast -->
     <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-[var(--mx-red)] text-white px-6 py-3 rounded-xl shadow-lg z-50 transition-opacity duration-300 opacity-0 hidden">
         <span id="message"></span>
     </div>
 
-    <!-- Draggable Kick Player -->
     <div id="draggable-player" class="draggable">
         <div id="controls" class="controls">
             <div id="drag-handle" class="text-xl font-extrabold">
@@ -350,35 +397,29 @@
             </iframe>
         </div>
     </div>
-    <!-- Minimized Icon -->
     <button id="open-btn" class="hidden fixed bottom-4 right-4 w-14 h-14 rounded-full bg-[#7A4F2A] text-[#FFC107] text-3xl z-[1001] shadow-lg">
         <i class="fa-solid fa-video"></i>
     </button>
 
-    <!-- Background effects -->
     <canvas id="particleCanvas"></canvas>
     <div class="glow-container">
         <div class="left-glow"></div>
         <div class="right-glow"></div>
     </div>
 
-    <!-- Coins (existing floating elements) -->
     <div class="relative h-0 z-[-1]">
         <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Left" class="coin-left absolute top-[-60px] left-[15%] opacity-60 rounded-full">
         <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Right" class="coin-right absolute top-[-60px] right-[15%] opacity-60 rounded-full">
     </div>
 
-    <!-- Floating Tortillas - Added with placeholder images and animations -->
     <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-1/4 left-[5%] rotate-12">
     <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla bottom-1/4 right-[8%] -rotate-6 animation-delay-2000">
     <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-[25%] right-[8%] rotate-8 animation-delay-3000">
-    <!-- Floating Piñatas - Added with placeholder images and animations -->
     <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] left-[25%] rotate-3">
     <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata bottom-[25%] left-[5%] -rotate-1 animation-delay-1500">
     <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] right-[25%] rotate-8 animation-delay-3000">
 
 
-    <!-- Header -->
     <header class="shadow-lg rounded-b-xl mb-8">
         <nav class="container mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-3 mb-4 md:mb-0">
@@ -395,65 +436,21 @@
         </nav>
     </header>
 
-    <!-- Main -->
     <main class="container mx-auto max-w-6xl px-4 py-8">
-        <!-- Hero / Leaderboard -->
         <section class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-[#CE1126] tracking-wide uppercase">
                 Join the Leaderboard
             </h2>
 
-<body class="antialiased">
-    <div class="papel-banner"></div>    <div class="serape"></div>
-    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-[var(--mx-red)] text-white px-6 py-3 rounded-xl shadow-lg z-50 transition-opacity duration-300 opacity-0 hidden">        <span id="message"></span>    </div>
-    <div id="draggable-player" class="draggable">        <div id="controls" class="controls">            <div id="drag-handle" class="text-xl font-extrabold">                <i class="fa-solid fa-grip-lines"></i>            </div>            <button id="close-btn" class="ml-auto text-2xl">                <i class="fa-solid fa-xmark"></i>            </button>        </div>        <div class="player-body">            <iframe src="https://player.kick.com/BigJuanWins" allow="autoplay; fullscreen" allowfullscreen title="BigJuanWins stream">            </iframe>        </div>    </div>    <button id="open-btn" class="hidden fixed bottom-4 right-4 w-14 h-14 rounded-full bg-[#7A4F2A] text-[#FFC107] text-3xl z-[1001] shadow-lg">        <i class="fa-solid fa-video"></i>    </button>
-    <canvas id="particleCanvas"></canvas>    <div class="glow-container">        <div class="left-glow"></div>        <div class="right-glow"></div>    </div>
-    <div class="relative h-0 z-[-1]">        <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Left" class="coin-left absolute top-[-60px] left-[15%] opacity-60 rounded-full">        <img src="https://placehold.co/120x120/FFC107/7A4F2A?text=$" alt="Coin Right" class="coin-right absolute top-[-60px] right-[15%] opacity-60 rounded-full">    </div>
-    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-1/4 left-[5%] rotate-12">    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla bottom-1/4 right-[8%] -rotate-6 animation-delay-2000">    <img src="https://i.ibb.co/x85dDjfw/image-removebg-preview-61-2.png" alt="Tortilla" class="tortilla top-[25%] right-[8%] rotate-8 animation-delay-3000">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] left-[25%] rotate-3">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata bottom-[25%] left-[5%] -rotate-1 animation-delay-1500">    <img src="https://i.ibb.co/JRBkVMq9/image-removebg-preview-62.png" alt="Piñata" class="pinata top-[15%] right-[25%] rotate-8 animation-delay-3000">
-
-    <header class="shadow-lg rounded-b-xl mb-8">        <nav class="container mx-auto max-w-6xl px-4 py-4 flex flex-col md:flex-row justify-between items-center">            <div class="flex items-center gap-3 mb-4 md:mb-0">                <img src="https://files.kick.com/images/user/18409977/profile_image/conversion/199949e4-7eda-4856-add6-e7a391a254b5-fullsize.webp" alt="BigJuanWins Logo" class="w-16 h-16 rounded-full ring-2 ring-white/70" />                <h1 class="brand-title text-white text-4xl">BigJuanWins</h1>            </div>            <ul class="flex items-center gap-6">                <li>                    <a href="/leaderboard/rainbet" class="text-white font-semibold uppercase tracking-wide hover:text-[var(--mx-gold)]">                        Leaderboard                    </a>                </li>            </ul>        </nav>    </header>
-    <main class="container mx-auto max-w-6xl px-4 py-8">        <section class="text-center mb-12">            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-[#CE1126] tracking-wide uppercase">                Join the Leaderboard            </h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="/leaderboard/upgrader" class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
-                    <img src="https://i.postimg.cc/mD8T9n0v/upgrader-logo.png" alt="Upgrader Logo" style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" />
-                    <div class="lb-badge">$500</div>
-                </a>
-                
                 <a href="/leaderboard/rainbet" class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
                     <img src="https://i.postimg.cc/15jtLV6z/rainbet1.png" alt="Rainbet Logo" style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" />
                     <div class="lb-badge">$2,500</div>
                 </a>
-
-                <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer" onclick="window.location.href='https://upgrader.gg/?r=JUAN'">
-                    <div class="flex flex-col items-center">
-                        <div class="mb-5 bg-[#CE1126] p-4 rounded-xl shadow-lg">
-                            <img src="https://i.postimg.cc/mD8T9n0v/upgrader-logo.png" alt="Upgrader Icon" class="mx-auto max-h-20" />
-                        </div>
-                        <div class="flex items-center gap-3 mb-4 text-3xl font-extrabold">
-                            <i class="fa-solid fa-angles-left text-[var(--mx-green)]"></i>
-                            <span>Code</span>
-                            <span class="text-[var(--mx-red)] uppercase">JUAN</span>
-                            <i class="fa-solid fa-angles-right text-[var(--mx-green)]"></i>
-                        </div>
-                        <ul class="grid sm:grid-cols-2 gap-3 text-gray-800 mb-6">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Unlock Exclusive Rewards
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Monthly Leaderboards
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-4 justify-center">
-                            <a href="https://upgrader.gg/?r=JUAN" class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
-                                Sign Up Now
-                            </a>
-                            <a href="/leaderboard/upgrader" class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
-                                View Leaderboard
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                <a href="/leaderboard/upgrader" class="lb-card transition-transform duration-200 hover:-translate-y-1" style="width:min(90vw, 360px); background:#006847;">
+                    <img src="https://i.ibb.co/CCQYHZL/image.png" alt="Upgrader Logo" style="cursor:pointer; display:block; margin:0 auto; max-width:70%; height:auto; padding:20px;" />
+                    <div class="lb-badge">$500</div>
+                </a>
             </div>
         </section>
 
@@ -489,8 +486,39 @@
             </div>
         </section>
 
+        <section class="flex justify-center mb-14">
+            <div class="block w-full max-w-xl rounded-2xl pro-card p-8 bg-white cursor-pointer" onclick="window.location.href='https://upgrader.gg/?r=JUAN'">
+                <div class="flex flex-col items-center">
+                    <div class="mb-5 bg-[#CE1126] p-4 rounded-xl shadow-lg">
+                        <img src="https://i.ibb.co/CCQYHZL/image.png" alt="Upgrader Icon" class="mx-auto max-h-20" />
+                    </div>
+                    <div class="flex items-center gap-3 mb-4 text-3xl font-extrabold">
+                        <i class="fa-solid fa-angles-left text-[var(--mx-green)]"></i>
+                        <span>Code</span>
+                        <span class="text-[var(--mx-red)] uppercase">JUAN</span>
+                        <i class="fa-solid fa-angles-right text-[var(--mx-green)]"></i>
+                    </div>
+                    <ul class="grid sm:grid-cols-2 gap-3 text-gray-800 mb-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Unlock Exclusive Rewards
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-[var(--mx-green)]"></i> Monthly Leaderboards
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="https://upgrader.gg/?r=JUAN" class="btn-gold font-bold py-3 px-8 rounded-full shadow inline-block">
+                            Sign Up Now
+                        </a>
+                        <a href="/leaderboard/upgrader" class="btn-green font-bold py-3 px-8 rounded-full shadow inline-block">
+                            View Leaderboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Socials (real brand favicons/icons) -->
+
         <section class="mb-16 text-center">
             <h3 class="text-3xl md:text-4xl font-extrabold mb-6 text-[var(--mx-green)] uppercase">Connect with us</h3>
 
@@ -522,10 +550,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="rounded-t-xl py-10 px-4 text-white shadow-inner" style="background:linear-gradient(160deg,#0d8a5e,var(--mx-green))">
-           <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8 items-start">
-             <div>
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8 items-start">
+            <div>
                 <p class="text-2xl font-extrabold mb-2">BigJuanWins</p>
                 <p class="text-sm opacity-90">All Rights Reserved 2025.</p>
             </div>
@@ -557,10 +584,8 @@
         </div>
     </footer>
 
-    <!-- Cloudflare beacon (kept) -->
     <script src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" crossorigin="anonymous" data-cf-beacon='{"token":"6a289e34095c4e319f5a765107c772ad"}'></script>
 
-    <!-- Behavior scripts (kept, slightly tidied) -->
     <script>
         function showToast(message, duration = 3000) {
             const t = document.getElementById('toast');
@@ -676,21 +701,21 @@
                 }
             }
 
-            function loop() {
-                requestAnimationFrame(loop);
+            function animate() {
+                requestAnimationFrame(animate);
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
             }
-            addEventListener('resize', () => {
+            resize();
+            init();
+            animate();
+            window.addEventListener('resize', () => {
                 resize();
                 init();
             });
-            resize();
-            init();
-            loop();
         };
     </script>
 </body>
